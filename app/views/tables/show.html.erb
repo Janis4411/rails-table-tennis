@@ -1,0 +1,12 @@
+<h1>Table#show</h1>
+<p>Find me in app/views/table/show.html.erb</p>
+<h2><%= @table.description %></h2>
+<p><%= @table.location %></p>
+<%= link_to "Delete #{@table.description}",
+            table_path(@table),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
+<%= link_to "Update #{@table.description}",
+            edit_table_path(@table),
+            data: { confirm: "Are you sure?" } %>
