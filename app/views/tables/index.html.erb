@@ -1,0 +1,7 @@
+<p>Find me in app/views/table/index.html.erb</p>
+<ul>
+  <% @tables.each do |table| %>
+  <li><%= link_to table.description, table_path(table) %></li>
+  <% end %>
+</ul>
+
