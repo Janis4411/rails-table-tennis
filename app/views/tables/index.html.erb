@@ -1,7 +1,11 @@
-<p>Find me in app/views/table/index.html.erb</p>
+<!-- <p>Find me in app/views/table/index.html.erb</p>
 <ul>
   <% @tables.each do |table| %>
   <li><%= link_to table.description, table_path(table) %></li>
   <% end %>
-</ul>
+</ul> -->
 
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= 'pk.eyJ1IjoiamFuaXM0NDExIiwiYSI6ImNrYXJ4YXhxbDBlbGgyeW81NXM5bGhsZm0ifQ.yhpv7sIAdlY_IIZ9H9tjgg' %>"></div>

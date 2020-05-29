@@ -3,3 +3,5 @@
 @import "components/navbar";
 @import "components/footer";
 @import "components/avatar";
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
+@import "components/map";
