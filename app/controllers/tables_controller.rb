@@ -2,7 +2,16 @@ class TablesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def index
-    @tables = Table.all
+    @tables = Table.geocoded
+
+    @markers = @tables.map do |table|
+      {
+        lat: table.latitude,
+        lng: table.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { table: table }),
+        image_url: helpers.asset_url('table-tennis-solid.svg')
+      }
+    end
   end
 
   def show
