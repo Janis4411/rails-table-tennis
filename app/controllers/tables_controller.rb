@@ -2,7 +2,7 @@ class TablesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def index
-    @tables = Table.geocoded
+    @tables = Table.where( "location LIKE ?", "% Berlin%" ).geocoded
 
     @markers = @tables.map do |table|
       {
