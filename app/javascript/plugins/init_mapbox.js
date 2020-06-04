@@ -15,6 +15,15 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
 
+    map.addControl(
+    new mapboxgl.GeolocateControl({
+    positionOptions: {
+    enableHighAccuracy: true
+    },
+    trackUserLocation: true
+    })
+    );
+
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                       mapboxgl: mapboxgl }));
 
@@ -37,6 +46,8 @@ const initMapbox = () => {
       fitMapToMarkers(map, markers);
   }
 };
+
+
 
 
 export { initMapbox };

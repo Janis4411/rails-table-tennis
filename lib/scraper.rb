@@ -1,15 +1,17 @@
 require 'nokogiri'
 require 'open-uri'
-require './app/models/table.rb'
+require_relative '../app/models/table.rb'
 
-module PingPongScraper
+class Scraper
 
   def initialize
+    @table = Table.new
     @tables_new = []
+    @scraper = Scraper.new
   end
 
-  def self.fetch_pingpong_tables
-    @tables_new = []
+  def fetch_pingpong_tables
+
     num_pages_to_scrape = 1
     # num_pages_to_scrape = 290 // all pages to scrap from
     count = 0
