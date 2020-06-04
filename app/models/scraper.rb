@@ -5,8 +5,8 @@ class Scraper
 
   def scrape_pingpong_tables
   @tables_new = []
-  num_pages_to_scrape = 1
-    # num_pages_to_scrape = 290 // all pages to scrap from
+
+    num_pages_to_scrape = 290
     count = 0
     webcount = 0
 

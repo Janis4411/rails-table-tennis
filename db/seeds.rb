@@ -11,7 +11,7 @@ Table.destroy_all
 
 scrape = Scraper.new
 tables = scrape.scrape_pingpong_tables
-Table.create_from_collection(@tables_new)
+Table.create_from_collection(tables)
 
 
 
