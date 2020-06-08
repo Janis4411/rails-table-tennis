@@ -17,6 +17,11 @@ const initMapbox = () => {
       zoom: 12 // starting zoom
     });
 
+
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+                                      mapboxgl: mapboxgl }));
+
+
     map.addControl(
     new mapboxgl.GeolocateControl({
     positionOptions: {
@@ -26,10 +31,7 @@ const initMapbox = () => {
     })
     );
 
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                      mapboxgl: mapboxgl }));
-
-    const markers = JSON.parse(mapElement.dataset.markers);
+      const markers = JSON.parse(mapElement.dataset.markers);
       markers.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
@@ -37,8 +39,8 @@ const initMapbox = () => {
           element.className = 'marker';
           element.style.backgroundImage = `url('${marker.image_url}')`;
           element.style.backgroundSize = 'contain';
-          element.style.width = '25px';
-          element.style.height = '25px';
+          element.style.width = '20px';
+          element.style.height = '20px';
 
         new mapboxgl.Marker(element)
           .setLngLat([ marker.lng, marker.lat ])
@@ -48,8 +50,6 @@ const initMapbox = () => {
       fitMapToMarkers(map, markers);
   }
 };
-
-
 
 
 export { initMapbox };

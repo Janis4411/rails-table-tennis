@@ -11,3 +11,9 @@
 .mapboxgl-popup-content h2 {
 font-size: 1rem;
 }
+
+
+.map {
+  icon-allow-overlap: false;
+  text-allow-overlap: false;
+}
