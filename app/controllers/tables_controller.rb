@@ -4,7 +4,9 @@ class TablesController < ApplicationController
   def index
     @tables = Table.where( "location LIKE ?", "% Berlin%" ).geocoded
 
-    @markers = @tables.map do |table|
+    @geojson = build_geojson
+
+    @tables_geo = @tables.map do |table|
       {
         lat: table.latitude,
         lng: table.longitude,
@@ -50,5 +52,12 @@ class TablesController < ApplicationController
 
   def table_params
     params.require(:table).permit(:description, :location)
+  end
+
+  def build_geojson
+    {
+      type: "FeatureCollection",
+      features: @tables.map(&:to_feature)
+    }
   end
 end
