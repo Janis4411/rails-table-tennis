@@ -3,7 +3,7 @@ class Table < ApplicationRecord
    def self.create_from_collection(tables_new)
       tables_new.each do |table_hash|
         Table.create(table_hash)
-        sleep(1)
+        sleep(0.1)
     end
   end
 
