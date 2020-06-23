@@ -6,20 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first
 
-puts "Cleaning database..."
-Table.destroy_all
-
 scrape = Scraper.new
 tables = scrape.scrape_pingpong_tables
 Table.create_from_collection(tables)
-
-
-
-
-
-
-
-
 
 # puts "Creating tables..."
 # table1 = { location: "Rudi-Dutschke-straße 26, Berlin", description: "beautiful table tennis plate" }
