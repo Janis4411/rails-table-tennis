@@ -2,7 +2,7 @@ class Table < ApplicationRecord
 
    def self.create_from_collection(tables_new)
       tables_new.each do |table_hash|
-        Table.find_or_create(table_hash)
+        Table.find_or_create_by(table_hash)
         sleep(0.3)
     end
   end
