@@ -34,14 +34,13 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
     );
 
 
-    map.addControl(
-    new mapboxgl.GeolocateControl({
-    positionOptions: {
-    enableHighAccuracy: true
-    },
-    trackUserLocation: true
-    })
-    );
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    }));
+
 
       // const markers = JSON.parse(mapElement.dataset.geojson);
       // markers.forEach((marker) => {
