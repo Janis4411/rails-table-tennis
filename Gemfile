@@ -23,7 +23,7 @@ gem 'jquery'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'mechanize', '~> 2.7.5'
+gem 'mechanize', '~> 2.7.7'
 gem 'geocoder'
 gem 'devise'
 gem 'autoprefixer-rails'
