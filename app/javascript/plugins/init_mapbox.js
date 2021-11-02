@@ -162,6 +162,30 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
       map.on('mouseleave', 'unclustered-point', function () {
         map.getCanvas().style.cursor = '';
       });
+            /// if user clicks on map a new red pin is placed - could be used for easier creating of tables.
+        //    map.on("click", function(e){
+        //     console.log("background click", e.lngLat);
+        //     var geojson = {
+        //         type: "FeatureCollection",
+        //         features: [{
+        //             type:"Feature",
+        //             geometry: { type: "Point", coordinates: [ e.lngLat.lng, e.lngLat.lat ]}
+        //         }]
+        //     };
+        //     map.addSource("pins", {
+        //         "type": "geojson",
+        //         "data": geojson
+        //     });
+        //     map.addLayer({
+        //         id: "pinsLayer",
+        //         type: "circle",
+        //         source: "pins",
+        //         paint: {
+        //             "circle-color": "red",
+        //             "circle-radius": 5
+        //         }
+        //     });
+        // });
 
 
     };

@@ -16,6 +16,10 @@ class TablesController < ApplicationController
     end
   end
 
+  def user_index
+    @tables = Table.where("userid = ?",current_user.id).geocoded
+  end
+
   def show
     @table = Table.find(params[:id])
   end
@@ -24,7 +28,7 @@ class TablesController < ApplicationController
     @table = Table.new(table_params)
     @table[:userid] = current_user.id
     @table.save
-    redirect_to table_path(@table)
+    redirect_to user_index_path
   end
 
   def new
@@ -39,14 +43,14 @@ class TablesController < ApplicationController
     @table = Table.find(params[:id])
     @table.update(table_params)
 
-    redirect_to table_path(@table)
+    redirect_to user_index_path
   end
 
   def destroy
     @table = Table.find(params[:id])
     @table.destroy
 
-    redirect_to tables_path
+    redirect_to user_index_path
   end
 
   private

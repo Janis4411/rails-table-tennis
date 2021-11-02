@@ -1,15 +1,13 @@
 <div class="form_for">
 <%= form_for(@table) do |f| %>
 <div>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description, class: 'form-control form-control-lg', style: "font-family: 'Montserrat Alternates', sans-serif", placeholder: "Table description", required: true %>
 </div>
 <div>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+  <%= f.text_field :location, class: 'form-control form-control-lg', style: "font-family: 'Montserrat Alternates', sans-serif", placeholder: "Table location", required: true %>
 </div>
-<div>
-  <%= f.submit %>
+<div class="button">
+  <%= f.submit :Submit, class: 'btn btn-outline-success btn-block', style: "font-family: 'Montserrat Alternates', sans-serif" %>
 </div>
 <% end %>
 </div>
