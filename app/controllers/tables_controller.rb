@@ -22,6 +22,7 @@ class TablesController < ApplicationController
 
   def create
     @table = Table.new(table_params)
+    @table[:userid] = current_user.id
     @table.save
     redirect_to table_path(@table)
   end
@@ -51,7 +52,7 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:description, :location)
+    params.require(:table).permit(:description, :location, :userid)
   end
 
   def build_geojson

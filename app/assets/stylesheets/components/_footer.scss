@@ -5,6 +5,7 @@
   justify-content: space-between;
   padding: 0px 20px;
   color: rgba(0,0,0,0.3);
+  border-top: 1px solid black;
 }
 
 .footer a {
@@ -27,12 +28,12 @@
   justify-content: center;
 }
 
-
 .footer h5 {
   font-weight: bold;
   margin-top: 10px;
 }
 
 .footer p {
-  line-height: 0.7;
+  line-height: 0.4;
+  font-size: 10px;
 }
