@@ -6,12 +6,4 @@
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 @import "components/map";
 @import "components/form";
-
-//.form_for {
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: space-between;
-//  background: white;
-//  margin-left: 10px;
-//  margin-bottom: 10px;
-// }
+@import "components/card";

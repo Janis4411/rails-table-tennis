@@ -42,7 +42,6 @@ class TablesController < ApplicationController
   def update
     @table = Table.find(params[:id])
     @table.update(table_params)
-
     redirect_to user_index_path
   end
 
@@ -56,7 +55,7 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:description, :location, :userid)
+    params.require(:table).permit(:description, :location, :userid, :table_photo)
   end
 
   def build_geojson

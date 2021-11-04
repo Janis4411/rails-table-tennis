@@ -1,4 +1,6 @@
 class Table < ApplicationRecord
+  has_one_attached :table_photo
+  after_commit :add_default_cover, on: [:create, :update]
 
    def self.create_from_collection(tables_new)
       tables_new.each do |table_hash|
@@ -30,7 +32,16 @@ class Table < ApplicationRecord
       }
     }
 
-end
+  end
+
+  private
+
+  def add_default_cover
+    unless table_photo.attached?
+    self.table_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+  end
+
+  end
 end
 
 
