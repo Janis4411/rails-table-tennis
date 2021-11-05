@@ -4,6 +4,14 @@
   color: black;
 }
 
+.card-body i {
+  opacity: 0.6;
+}
+
+.card-body i:hover {
+  opacity: 1;
+}
+
 .card-body p {
   font-family: Montserrat Alternates;
   text-decoration: none;
