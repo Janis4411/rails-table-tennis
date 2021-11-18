@@ -5,8 +5,8 @@
   <% @tables.each do |table| %>
   <div class="card" style="width: 18rem; margin: 10px;">
     <% if table.table_photo.attached? %>
-  <img src="<%=(url_for(table.table_photo))%>" class="card-img-top" alt="...">
-  <% end %>
+      <img src="<%=(url_for(table.table_photo))%>" class="card-img-top" alt="...">
+    <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= link_to table.description, table_path(table) %></h5>
     <p class="card-text"><%= table.location %></p>
