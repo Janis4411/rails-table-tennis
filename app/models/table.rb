@@ -1,5 +1,6 @@
 class Table < ApplicationRecord
-  has_one_attached :table_photo
+  has_one_attached :table_photo, dependent: :destroy
+
   after_commit :add_default_cover, on: [:create, :update]
 
    def self.create_from_collection(tables_new)
