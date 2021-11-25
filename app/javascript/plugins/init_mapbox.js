@@ -1,10 +1,5 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-// const fitMapToMarkers = (map, markers) => {
-//   const bounds = new mapboxgl.LngLatBounds();
-//   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-//   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-// };
 
   const fitMapToMarkers = (map, features) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -40,19 +35,6 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
       },
       trackUserLocation: true
     }));
-
-
-      // const markers = JSON.parse(mapElement.dataset.geojson);
-      // markers.forEach((marker) => {
-      //   const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-
-      //     const element = document.createElement('div');
-      //     element.className = 'marker';
-      //     element.style.backgroundImage = `url('${marker.image_url}')`;
-      //     element.style.backgroundSize = 'contain';
-      //     element.style.width = '20px';
-      //     element.style.height = '20px';
-
 
       map.on('load', function() {
         const tables = JSON.parse(mapElement.dataset.tables);
@@ -162,7 +144,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
       map.on('mouseleave', 'unclustered-point', function () {
         map.getCanvas().style.cursor = '';
       });
-            /// if user clicks on map a new red pin is placed - could be used for easier creating of tables.
+            // if user clicks on map a new red pin is placed - could be used for easier creating of tables.
         //    map.on("click", function(e){
         //     console.log("background click", e.lngLat);
         //     var geojson = {

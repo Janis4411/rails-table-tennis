@@ -10,8 +10,7 @@ class TablesController < ApplicationController
       {
         lat: table.latitude,
         lng: table.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { table: table }),
-        image_url: helpers.asset_url('table-tennis-solid.svg')
+        infoWindow: render_to_string(partial: "info_window", locals: { table: table })
       }
     end
   end
@@ -27,8 +26,12 @@ class TablesController < ApplicationController
   def create
     @table = Table.new(table_params)
     @table[:userid] = current_user.id
-    @table.save
-    redirect_to user_index_path
+    if @table.save
+      redirect_to user_index_path
+    else
+      flash[:notice] = "Table not saved. Description and location need to be atleast 10 characters long"
+      render 'new'
+    end
   end
 
   def new
@@ -41,8 +44,12 @@ class TablesController < ApplicationController
 
   def update
     @table = Table.find(params[:id])
-    @table.update(table_params)
-    redirect_to user_index_path
+    if @table.update(table_params)
+      redirect_to user_index_path
+    else
+      flash[:notice] = "Table not updated. Description and location need to be atleast 10 characters long"
+      render 'edit'
+    end
   end
 
   def destroy
