@@ -1,5 +1,6 @@
 <% if table.table_photo.attached? %>
-  <p>Hier sollte das Bild sein</p>
+  <p>Here should be an image</p>
+  <img src="<%=(url_for(table.table_photo))%>" class="card-img-top" alt="...">
 <% end %>
 <h2><%= table.description %></h2>
 <p><%= table.location %></p>
