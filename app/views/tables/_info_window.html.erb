@@ -1,6 +1,5 @@
 <% if table.table_photo.attached? %>
-  <p>Here should be an image</p>
-  <img src="<%=(url_for(table.table_photo))%>" class="card-img-top" alt="...">
+  <%= cl_image_tag table.table_photo.key, height: 150, width: 170, class: "mb-2", crop: :fill %>
 <% end %>
 <h2><%= table.description %></h2>
 <p><%= table.location %></p>

@@ -5,10 +5,10 @@
       <% @tables.each do |table| %>
         <div class="card" style="width: 18rem; margin: 10px;">
           <% if table.table_photo.attached? %>
-            <img src="<%=(url_for(table.table_photo))%>" class="card-img-top" alt="...">
+            <%= cl_image_tag table.table_photo.key, height: 300, width: 150, class: "card-img-top p-2" %>
           <% end %>
         <div class="card-body">
-      <h5 class="card-title"><%= link_to table.description, table_path(table) %></h5>
+      <h5 class="card-title"><%= table.description %></h5>
       <p class="card-text"><%= table.location %></p>
     </div>
       <div class="card-body">

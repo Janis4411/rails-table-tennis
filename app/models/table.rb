@@ -41,7 +41,8 @@ class Table < ApplicationRecord
 
   def add_default_cover
     unless table_photo.attached?
-    self.table_photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+      file = URI.open("https://res.cloudinary.com/dw0fvtaxe/image/upload/v1638271635/development/1h38rufpqlj2bhamv1sgmasnvym5.jpg")
+    self.table_photo.attach(io: file, filename: 'default-image.jpg')
   end
 
   end

@@ -7,7 +7,7 @@
         <%= f.text_field :location, class: 'form-control form-control-lg', placeholder: "Table location", required: true %>
       </div>
       <div>
-        <%= f.file_field :table_photo, class: 'form-control form-control-lg' %>
+        <%= f.file_field :table_photo, direct_upload: true, class: 'form-control form-control-lg' %>
       </div>
     <div class="button">
       <%= f.submit :Submit, class: 'btn btn btn-dark btn-block' %>
