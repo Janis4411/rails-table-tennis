@@ -11,14 +11,14 @@
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.10.1",
     "mechanize": "^1.0.3",
-    "engines": {
-    "node": "14.x"
-  },
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
+  }
+    "engines": {
+    "node": "14.x"
   }
 }
