@@ -11,10 +11,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if !user_signed_in? %>
-      <li class="nav-item button">
+      <li class="nav-item mr-4 btn btn-dark">
         <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
       </li>
-      <li class="nav-item button">
+      <li class="nav-item btn btn-dark">
         <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
       </li>
       <% else %>
