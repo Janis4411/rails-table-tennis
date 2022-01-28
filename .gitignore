@@ -44,3 +44,4 @@ yarn-debug.log*
 .env
 # /config/authentication_details.yml
 .env*
+sendgrid.env
