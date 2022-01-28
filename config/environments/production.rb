@@ -1,17 +1,17 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.action_mailer.default_url_options = { :host => "http://www.berlintabletennismap.com" }
+  config.action_mailer.default_url_options = { host: "http://www.berlintabletennismap.com" }
 
-  config.action_mailer.smtp_settings = {
-    :user_name => ENV["GMAIL_USERNAME"],
-    :password => ENV["GMAIL_PASSWORD"],
-    :domain => 'berlintabletennismap.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
+  ActionMailer::Base.smtp_settings = {
+  :address => 'smtp.sendgrid.net',
+  :port => '587',
+  :authentication => :plain,
+  :user_name => ENV['SENDGRID_USERNAME'],
+  :password => ENV['SENDGRID_PASSWORD'],
+  :domain => 'berlintabletennismap.com',
+  :enable_starttls_auto => true
+}
 
   # doesn't have to be Heroku, but you get the idea.
 
