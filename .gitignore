@@ -54,4 +54,4 @@ server.crt
 server.csr
 server.key
 server.pass.key
-
+credentials.yml.enc
