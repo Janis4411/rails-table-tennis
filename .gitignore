@@ -44,7 +44,7 @@ yarn-debug.log*
 .env
 config/authentication_details.yml
 config/cloudinary.yml
-config/initilizers/cloudinary.rb
+config/initializers/cloudinary.rb
 .env*
 sendgrid.env
 berlintabletennismap_com.ca-bundle
