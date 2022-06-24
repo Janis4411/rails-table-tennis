@@ -42,6 +42,16 @@ yarn-debug.log*
 
 #API Keys
 .env
-# /config/authentication_details.yml
+config/authentication_details.yml
+config/cloudinary.yml
+config/initilizers/cloudinary.rb
 .env*
 sendgrid.env
+berlintabletennismap_com.ca-bundle
+berlintabletennismap_com.crt
+berlintabletennismap_com.zip
+server.crt
+server.csr
+server.key
+server.pass.key
+
